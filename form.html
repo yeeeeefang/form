@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本表單構造</title>
+    <style>
+        #member-form>* {
+            display: block;
+        }
+
+        #member-form label ,#member-form-fieldset,div {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--搜尋欄位 -->
+    <form action="" method="post" name="search-form" id="search-form" title="搜尋表單">
+        <!-- 欄位項目名稱 -->
+        <label for="search">搜尋：</label>
+        <!-- 輸入文字欄位 -->
+        <input type="search" name="search" id="search" title="搜尋欄位">
+        <!-- 送出按鈕 -->
+        <input type="submit" name="search-btn" id="search-btn" title="搜尋按鈕" value="送出">
+    </form>
+
+    <hr>
+
+    <!-- 會員資料修改表單 -->
+    <h2>會員資料修改</h2>
+    <form action="" method="post" name="member-form" id="member-form" title="會員資料修改表單">
+        <label for="username">*姓名</label>
+        <input type="text" name="username" id="username" title="姓名" placeholder="請輸入姓名" required autofocus><!-- 會直接跳到那裏 -->
+
+        <!-- 禁用或只讀一定要給值 -->
+        <!-- 禁用欄位disable -->
+        <label for="account">*帳號：(禁用)</label>
+        <input type="text" name="account" id="account" title="帳號" value="blythedesign" required disabled>
+        <!-- 只讀readonly(較少用) -->
+        <label for="userid">*身分證字號：(只讀)</label>
+        <input type="text" name="userid" id="userid" title="身分證字號" value="A123456789" required readonly maxlength="10">
+
+        <label for="email">*Email：</label>
+        <input type="email" name="email" id="email" title="Email" placeholder="請輸入Email" required>
+
+        <label for="tel">聯絡電話：</label>
+        <input type="tel" name="tel" id="tel" title="聯絡電話" placeholder="請輸入聯絡電話">
+
+        <label for="password">重設密碼：</label>
+        <input type="password" name="password" id="password" title="重設密碼" placeholder="請輸入6~8英數混合字元">
+        <label for="password-1">再次確認密碼</label>
+        <input type="password" name="password" id="password-1" title="再次確認密碼" placeholder="請輸入6~8英數混合字元">
+
+        <label for="birthday">生日：</label>
+        <input type="date" name="birthday" id="birthday">
+
+        <label for="">上傳檔案</label>
+        <input type="file" name="file" id="file" title="上傳檔案" multiple>
+        <small>僅可上傳.jpg、.gif、.png、.pdf檔案類型</small>
+
+        <label for="sex">性別：</label>
+        <select name="sex" id="sex">
+            <option value="">請選擇</option>
+            <option value="生理男">生理男</option>
+            <option value="生理女">生理女</option>
+        </select>
+
+        <label for="other">其他類別</label>
+        <select name="other" id="other">
+            <option value="">請選擇</option>
+            <optgroup label="分類一">
+                <option value="選項一">選項一</option>
+                <option value="選項二">選項二</option>
+                <option value="選項三">選項三</option>
+            </optgroup>
+            <optgroup label="分類二">
+                <option value="選項一">選項一</option>
+                <option value="選項二">選項二</option>
+                <option value="選項三">選項三</option>
+            </optgroup>
+        </select>
+
+        <fieldset>
+            <!-- name名字一樣就會知道這三個選一個 -->
+            <legend>會員類型:</legend>
+            <input type="radio" name="member" id="member1" title="金卡會員" value="金卡會員">
+            <label for="member1">金卡會員</label>
+
+            <input type="radio" name="member" id="member2" title="銀卡會員" value="銀卡會員">
+            <label for="member2">銀卡會員</label>
+
+            <input type="radio" name="member" id="member3" title="銅卡會員" value="銅卡會員">
+            <label for="member3">銅卡會員</label>
+        </fieldset>
+
+        <fieldset>
+            <!-- name名字一樣就會知道這三個選一個 -->
+            <legend>類型項目:</legend>
+            <input type="radio" name="category" id="category1" title="類型項目1" value="類型項目1">
+            <label for="category1">花王</label>
+
+            <input type="radio" name="category" id="category2" title="類型項目2" value="類型項目2">
+            <label for="category2">飛柔</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>服務內容:</legend>
+            <input type="checkbox" name="order" id="order1" title="洗頭" value="洗頭">
+            <label for="order1">洗頭</label>
+
+            <input type="checkbox" name="order" id="order2" title="染髮" value="染髮">
+            <label for="order2">染髮</label>
+
+            <input type="checkbox" name="order" id="order3" title="剪髮" value="剪髮">
+            <label for="order3">剪髮</label>
+
+            <input type="checkbox" name="order" id="order4" title="漂髮" value="漂髮">
+            <label for="order4">漂髮</label>
+
+            <input type="checkbox" name="order" id="order5" title="燙髮" value="燙髮">
+            <label for="order5">燙髮</label>
+        </fieldset>
+
+        <label for="message">留言</label>
+        <textarea name="message" id="message" title="留言欄位" rows="6"></textarea>
+
+        <div>
+            <input type="reset" name="reset-btn" id="reset-btn" value="重填資料">
+            <input type="submit" name="submit-btn" id="submit-btn" value="送出資料">
+        </div>
+
+
+
+    </form>
+</body>
+
+</html>
